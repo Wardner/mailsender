@@ -1,0 +1,29 @@
+{
+  "name": "fonosspeedy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "ts-node index.ts lista.csv",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.28",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "@fonos/auth": "0.0.65",
+    "@fonos/sdk": "0.0.62",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "neat-csv": "^6.0.1",
+    "nodemailer": "^6.4.18",
+    "reflect-metadata": "^0.1.13"
+  }
+}
