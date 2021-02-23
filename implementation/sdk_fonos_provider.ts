@@ -10,7 +10,7 @@ export default class SdkFonosProvider implements IFonosProvider {
                 firstName: user.name,
                 lastName: user.name,
                 email: user.email
-            });
+            });            
             return data;
         } catch (e) {
             console.log(e);
@@ -21,7 +21,7 @@ export default class SdkFonosProvider implements IFonosProvider {
         let data = new  Auth(new Jwt());
         let token : any;
         try{
-             token = await data.createTokens(user.accessKeyId,'fonos',user.role,'secret')
+             token = await data.createTokens(user.accessKeyId,'fonos',user.role,'changeit')
         }catch(e){
             console.log(e);
             

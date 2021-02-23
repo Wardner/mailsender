@@ -11,10 +11,7 @@ let config = {
     auth:{
         user:process.env.AUTH_USER,
         pass:process.env.AUTH_PASS,
-    },
-    host:process.env.HOST,
-    port: parseInt(process.env.PORT),
-    secure: Boolean(process.env.SECURE)
+    }
 }
 let _processor = new Processor(new CsvReader(),new SmtpEmailSender(config), new SdkFonosProvider());
 _processor.run(args.toString()).then(result =>{

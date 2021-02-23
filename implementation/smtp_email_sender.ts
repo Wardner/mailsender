@@ -3,9 +3,7 @@ const nodemailer = require("nodemailer");
 
 export default class SmtpEmailSender implements IEmailSender{
     transport:any;
-    constructor(config:Provider){
-        console.log(config);
-        
+    constructor(config:Provider){        
         this.transport = nodemailer.createTransport({
             service:'gmail',
             auth: {
@@ -16,7 +14,6 @@ export default class SmtpEmailSender implements IEmailSender{
     }
     async send(body: string, to: string, subject: string) {
         let info = await this.transport.sendMail({
-            from: 'raulreyes23ss@gmail.com', // sender address
             to: to, // list of receivers
             subject: subject, // Subject line
             text: body, // plain text body
@@ -28,9 +25,6 @@ export default class SmtpEmailSender implements IEmailSender{
 }
 
 export interface Provider{
-    host: string,
-    port: number,
-    secure: boolean,
     auth: Auth
 }
 
